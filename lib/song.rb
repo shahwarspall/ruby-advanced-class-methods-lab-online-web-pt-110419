@@ -52,15 +52,27 @@ class Song
     self.all.sort {|a,b| a.name <=> b.name}
   end 
   
-  def self.new_from_filename(files)
-   song = self.new
-   song.name = name
-   song.artist_name = artist_name
-   song
-   
-   file = files.split(" - ")
-   
-     binding.pry 
+  def self.new_from_filename(filename)
+    split = filename.split(" - ")
+    name = split[1].split(".")[0]
+    artist_name = split[0]
+    
+    song = self.new
+    song.name = name
   
+    song
   end 
+  
+  def self.create_from_filename(files)
+    
+    song = self.create
+    song.name = name
+    song.artist_name = artist_name
+    song
+    
+    split = files.split (" - ")
+    name = split[0].split( " . ")
+    
+  end 
+  
 end 
