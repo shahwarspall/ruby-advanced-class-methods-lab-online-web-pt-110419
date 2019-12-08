@@ -1,4 +1,4 @@
-require 'spec_helper'
+urequire 'spec_helper'
 require 'pry'
 
 describe "Song Class Methods" do
